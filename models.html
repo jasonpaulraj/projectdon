@@ -2,83 +2,323 @@
 <html lang="en">
 
 <head>
-    <title>Project Don</title>
+    <title>Don Management | Specialist Talent Agency</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,bold">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#232b2b">
+    <!-- <link rel="shortcut icon" sizes="192x192" type="image/x-icon" href="assets/img/common/logo2/512.png" /> -->
+    <!--MANIFEST-->
+    <!-- <link rel="manifest" href="manifest.json">  -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,bold"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/media-queries.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/plugin_override.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/plugin_override.css" type="text/css" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/font-awesome.min.css" /> -->
+
+    <!-- <link rel="stylesheet" href="assets/css/slick-theme.css" type="text/css" /> -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="assets/js/layout.js"></script>
     <!-- PLUGINS -->
     <!-- TINGLE MODAL DIALOG -->
-    <link href="assets/plugins/tingle/tingle.min.css" rel="stylesheet" />
-    <script src="assets/plugins/tingle/tingle.min.js"></script>
+    <!-- <link href="assets/plugins/tingle/tingle.min.css" rel="stylesheet" />
+    <script src="assets/plugins/tingle/tingle.min.js"></script>-->
+    <!-- iziModal MODAL DIALOG -->
+    <!-- <link href="assets/plugins/iziModal/iziModal.min.css" rel="stylesheet" /> -->
+    <!-- <script src="assets/plugins/iziModal/iziModal.min.js"></script> -->
+    <!-- SLICK IMAGE SLIDER -->
+    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+    <script>
+        var contentLoaderStart;
+
+        function loaderInitiate() {
+            console.log("initiate loader turn off 3secs");
+            contentLoaderStart = setTimeout(loadPage, 500);
+        }
+
+        function loadPage() {
+            document.getElementById("loaderBody").classList.remove('loaderFormat');
+            document.getElementById("contentLoader").style.display = "none";
+            document.getElementById("contentLoaderComplete").style.display = "block";
+        }
+    </script>
+    <style>
+        .iziModal-content {
+            /* background: #022e3a; */
+            background: #272727;
+        }
+
+        .iziModal-header-buttons {
+            background: black !important;
+            border-radius: 50px !important;
+        }
+
+        body {
+            background: #000000 !important;
+        }
+
+        @media only screen and (min-width: 991px) and (max-width: 1200px) {
+            .col-lg-6 {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 33% !important;
+            }
+        }
+    </style>
+
 </head>
 
-<body>
-    <!-- HEADER START -->
-    <div data-include="header"></div>
-    <!--END HEADER -->
-    <!-- CONTENT GOES HERE -->
+<body id="loaderBody" class="loaderFormat" onload="loaderInitiate()" style="margin:0;background: #000000 !important;">
+    <div id="contentLoader" style=""></div>
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-top:100px;">
-        <h1 class="" style="font-size:30px;text-align: center;color:white;">Models</h1>
-        <p class="modal_detail_text modal_detail_summary" style="font-size:20px;text-align: justify;color:#ccc;border-bottom:4px solid #ccc;">
-            Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College
-            in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-            and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor
-            sit amet..", comes from a line in section 1.10.32.
-            <br>
-            <br>
-        </p>
-    </div>
-    <!-- MAIN MODALS FRAME -->
-    <div class="container">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 margB20" style="">
-            <!-- MODALS SECTION #1-->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+    <div style="display:none;" id="contentLoaderComplete" class="animate-bottom">
+        <!-- HEADER START -->
+        <div data-include="header"></div>
+        <!--END HEADER -->
+        <!-- CONTENT GOES HERE -->
 
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+        <div class="col-12 title-box" style="background: #000000;">
+            <h1 class="title-font">Models</h1>
+            <p class="content-title-small">
+                Browse through our models here
+            </p>
+            <br />
+            <br />
+        </div>
+        <!-- MAIN MODALS FRAME -->
+        <div class="container">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 margB20">
+                <!-- MODALS SECTION #1-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="amir" href="models/amir.html" class="modal_mainframe_box model-profile-picture_mobile  model-profile-picture"
+                            style="background-image: url('assets/img/models/Amir/1.jpg');">
+                        </a>
+                        <p class="model-name">Amir Hamzah</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="azfar" href="models/azfar.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Azfar/2.jpg');">
 
+                        </a>
+                        <p class="model-name">Azfar Firdaus</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="bernard" href="models/bernard.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Bernard/5.jpg');">
+                        </a>
+                        <p class="model-name">Bernard Benzamin Nathan</p>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
-                </div>
-            </div>
-            <!-- MODALS SECTION #2-->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+                <!-- MODALS SECTION #2-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="jeslinda" href="models/jeslinda.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Jeslinda/6.jpg');">
 
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+                        </a>
+                        <p class="model-name">Jeslinda Paul</p>
+                    </div>
+                    <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="marsya" href="models/marsya.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Marsya/3.jpg');">
 
-                </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
-                </div>
-            </div>
-            <!-- MODALS SECTION #3-->
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="">
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+                        </a>
+                        <p class="model-name">Miza Marsya</p>
+                    </div> -->
+                    <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="nadeera" href="models/nadeera.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture" style="background-image: url('assets/img/models/Nadeera/1.jpg');">
+                        </a>
+                        <p class="model-name">Nadeera K. Vasu</p>
+                    </div> -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="nazira" href="models/nazira.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Nazira/1.jpg');">
+                        </a>
+                        <p class="model-name">Nur Nazira</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="lavania" href="models/lavania.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Lavania/1.jpg');">
 
+                        </a>
+                        <p class="model-name">Lavania</p>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+                <!-- MODALS SECTION #3-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="afiq" href="models/afiq.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Afiq/7.jpg');">
 
+                        </a>
+                        <p class="model-name">Afiq Ilham</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="nik" href="models/nik.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Nik/4.jpg');">
+
+                        </a>
+                        <p class="model-name">Nik Norziehana</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="rachel" href="models/rachel.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Rachel/1.jpg');">
+                        </a>
+                        <p class="model-name">Rachel Siew</p>
+                    </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 modal_mainframe_box openBtn model-profile-picture">
+                <!-- MODALS SECTION #4-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="loga" href="models/loga.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Loga/7.jpg');">
+
+                        </a>
+                        <p class="model-name">Loga</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="siti" href="models/siti.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Siti/4.jpg');">
+
+                        </a>
+                        <p class="model-name">Siti Nur Aisyah</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="rocyie" href="models/rocyie.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Rocyie/1.jpg');">
+                        </a>
+                        <p class="model-name">Rocyie</p>
+                    </div>
+                </div>
+                <!-- MODALS SECTION #5-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="kimi" href="models/kimi.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Kimi/7.jpg');">
+
+                        </a>
+                        <p class="model-name">Kimi</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="daniel" href="models/daniel.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Daniel/4.jpg');">
+
+                        </a>
+                        <p class="model-name">Daniel</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="ata" href="models/ata.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Ata/1.jpg');">
+                        </a>
+                        <p class="model-name">Ata</p>
+                    </div>
+                </div>
+                <!-- MODALS SECTION #6-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="lha" href="models/lha.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Lha/2.jpg');">
+
+                        </a>
+                        <p class="model-name">Nur Nabihah</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="lynda" href="models/lynda.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Lynda/4.jpg');">
+
+                        </a>
+                        <p class="model-name">Lynda</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="aveena" href="models/aveena.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Aveena/3.jpg');">
+
+                        </a>
+                        <p class="model-name">Aveena</p>
+                    </div>
+                </div>
+                <!-- MODALS SECTION #7-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="yik" href="models/yik.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Yik/8.jpg');">
+
+                        </a>
+                        <p class="model-name">Yik</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="nuur" href="models/nuur.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Nuur/7.jpg');">
+
+                        </a>
+                        <p class="model-name">Nuur</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="linges" href="models/linges.html" class="model-profile-picture_mobile modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Linges/2.jpg');">
+                        </a>
+                        <p class="model-name">Linges</p>
+                    </div>
+                </div>
+                <!-- MODALS SECTION #8-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="hana" href="models/hana.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Hana/3.jpg');">
+
+                        </a>
+                        <p class="model-name">Hana</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="adam" href="models/adam.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Adam/3.jpg');">
+
+                        </a>
+                        <p class="model-name">Adam</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="sofia" href="models/sofia.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Sofia/3.jpg');">
+
+                        </a>
+                        <p class="model-name">Sofia</p>
+                    </div>
+                </div>
+                <!-- MODALS SECTION #9-->
+                <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 main-model-section" style="">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        
+                    </div> -->
+                    <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="adam" href="models/adam.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Adam/3.jpg');">
+
+                        </a>
+                        <p class="model-name">Adam</p>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 mobile-border">
+                        <a id="adam" href="models/adam.html" class="modal_mainframe_box openBtn model-profile-picture"
+                            style="background-image: url('assets/img/models/Adam/3.jpg');">
+
+                        </a>
+                        <p class="model-name">Adam</p>
+                    </div> -->
                 </div>
             </div>
         </div>
+        <!-- Modal structure -->
+        <!-- <div id="modal"> -->
+        <!-- data-iziModal-fullscreen="true"  data-iziModal-title="Welcome"  data-iziModal-subtitle="Subtitle"  data-iziModal-icon="icon-home" -->
+        <!-- Modal content -->
+        <!-- </div> -->
+        <!-- <script src="assets/js/models.js"></script> -->
+        <!-- CONTENT END -->
+        <!-- FOOTER START-->
+        <div data-include="footer"></div>
+        <!-- FOOTER END-->
     </div>
-    <script src="assets/js/models.js"></script>
-    <!-- CONTENT END -->
-    <!-- FOOTER START-->
-    <div data-include="footer"></div>
-    <!-- FOOTER END-->
